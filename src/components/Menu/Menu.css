@@ -1,0 +1,23 @@
+.logo {
+    height: 32px;
+    width: 140px;
+    margin: 16px;
+    border-radius: 0% !important;
+}
+
+.site-layout .site-layout-background {
+    background: #fff;
+}
+
+.backgroundcolornav {
+    background: #001529 !important;
+    color: white;
+}
+
+.h3 {
+    color: white;
+}
+
+[data-theme="dark"] .site-layout .site-layout-background {
+    background: #141414;
+}
