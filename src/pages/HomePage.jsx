@@ -17,8 +17,7 @@ const { Search } = Input;
   useEffect(() => {
     let didCancel = false;
     const fetchData = async () => {
-      const result = await AuthURL("https://api.uprodit.com/v1/search/all?usecase=perso&startIndex=1&maxResults=4");
-      const resultF = await fetchSearch(searchValue , result);
+      const resultF = await fetchSearch(searchValue);
       
       if (!didCancel) {
         setSearchFreelancers(resultF);
@@ -35,8 +34,7 @@ const { Search } = Input;
   );
  
   const getPicture = async(id) => {
-  const image = await AuthURL(`https://api.uprodit.com/v2/profile/picture/f/${id}`);
-  await SearchPictureProfil(id, image).then((data)=>{
+  await SearchPictureProfil(id).then((data)=>{
     setPicture(data.b64Content)
    })
  }
