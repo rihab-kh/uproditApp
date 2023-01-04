@@ -17,12 +17,6 @@ export const SearchPictureProfil = async (id) => {
   return result.data;
 };
 
-function delay(ms) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
-}
-
 export const fetchSearch = async (searchValue) => {
   var endpoint = `${URL_PROFILE}`;
   const result = await axios.get(endpoint, {
