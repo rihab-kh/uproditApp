@@ -19,11 +19,16 @@ export const SearchPictureProfil = async (id) => {
 
 export const fetchSearch = async (searchValue) => {
   var endpoint = `${URL_PROFILE}`;
+
+  if (searchValue) {
+    endpoint = `${URL_PROFILE}&terms=${searchValue}`
+  }
+
   const result = await axios.get(endpoint, {
     headers: {
       Authorization : generateSignature(UPRODIT_APPID, UPRODIT_ENV, endpoint)
     }
   })
-  return result.data.filter((search) => 
-  search.denomination.toLowerCase().includes(searchValue.toLowerCase()));
+
+  return result.data;
 };
